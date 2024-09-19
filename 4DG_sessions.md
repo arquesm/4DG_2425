@@ -1,4 +1,4 @@
-# Projectes interactius /////----4DG----////// Projectes interactius
+# /////----4DG -- Projectes interactius --- ////// 
 
 ## Bloc2. Interactius: programació creativa i producte digital.
 
