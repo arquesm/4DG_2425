@@ -1,13 +1,18 @@
 /* Exemples llibre Processing a programming handbook for visual designers and artists p66 */
+PFont myfont;
+int num;
+
 void setup() {
   frameRate(2);
-  size(800, 900);
+  myfont=createFont("IBMPlexMono-Medium.ttf", 18);
+  size(595, 879);
 }
 void draw() {
+  textFont(myfont);
   background(255);
   fill(0);
-  textSize(20);
-  column();
+  textSize(8);
+  volen();
 }
 
 void regular() {
@@ -19,8 +24,8 @@ void regular() {
 }
 
 void column() {
-  for (int y = 20; y <= height-20; y += 15) {
-    for (int x = 20; x <= width-20; x += 58) {
+  for (int y = 20; y <= height-20; y += 5) {
+    for (int x = 20; x <= width-20; x += 88) {
       text("b", x, y);
     }
   }
@@ -102,10 +107,14 @@ void dibuix(float posx, float posy) {
 }
 
 void column_dibuix() {
-  for (int y = 20; y <= height-20; y += 15) {
-    for (int x = 20; x <= width-20; x += 58) {
-      //text("b", x, y);
+  for (int y = 20; y <= height-20; y += 8) {
+    for (int x = 20; x <= width-20; x += 28) {
+      //dibuix(x, y);
+      //text("b",  x, y);
+      push();
+      rotate(radians(x+y));
       dibuix(x, y);
+      pop();
     }
   }
 }
@@ -113,5 +122,18 @@ void column_dibuix() {
 void random_dibuix() {
   for (int i=0; i<5; i++) {
     dibuix(random(width), random(height));
+  }
+}
+
+void volen() {
+  for (int y = 20; y <= 40; y += 5) {
+    for (int x = 20; x <= 40; x += 5) {
+      num = ceil(random(33));
+      if ((x % num) == 0) {
+        text("v", random(width), y);
+      } else {
+        text("v", x, y);
+      }
+    }
   }
 }
