@@ -1,4 +1,6 @@
 /* Exemples llibre Processing a programming handbook for visual designers and artists p66 */
+import processing.pdf.*;
+boolean record;
 PFont myfont;
 int num;
 
@@ -8,11 +10,24 @@ void setup() {
   size(595, 879);
 }
 void draw() {
+if (record) {
+    beginRecord(PDF, "retition-####.pdf");
+  }
+
   textFont(myfont);
   background(255);
   fill(0);
   textSize(8);
   volen();
+
+if (record) {
+    endRecord();
+  record = false;
+  }
+}
+
+void mousePressed() {
+  record = true;
 }
 
 void regular() {
